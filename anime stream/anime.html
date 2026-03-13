@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anime Stream</title>
+
+<style>
+
+/* BODY */
+
+body{
+background:#111;
+color:white;
+font-family:Arial;
+text-align:center;
+margin:0;
+transition:0.4s;
+}
+
+/* TITLE */
+
+h1{
+background:#e50914;
+padding:15px;
+margin:0;
+}
+
+/* NAVBAR */
+
+nav{
+background:black;
+padding:15px;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:20px;
+font-size:18px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:red;
+}
+
+/* SEARCH */
+
+#search{
+padding:10px;
+width:300px;
+margin:20px auto;
+display:block;
+border-radius:5px;
+border:none;
+}
+
+/* GRID */
+
+.anime-grid{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+/* CARD */
+
+.anime{
+margin:20px;
+background:#1a1a1a;
+padding:15px;
+border-radius:10px;
+width:220px;
+transition:0.3s;
+}
+
+.anime:hover{
+transform:translateY(-5px);
+}
+
+/* IMAGE */
+
+.anime img{
+width:200px;
+height:300px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* TITLE */
+
+.anime p{
+font-weight:bold;
+margin-top:10px;
+}
+
+/* BUTTON */
+
+button{
+padding:8px 12px;
+margin:5px;
+background:#e50914;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#b20710;
+}
+
+/* PLAYER */
+
+#player{
+display:block;
+margin:30px auto;
+width:60%;
+height:500px;
+border:none;
+}
+
+/* SECTION TITLE */
+
+h2{
+border-bottom:2px solid red;
+display:inline-block;
+padding-bottom:5px;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:50px;
+padding:15px;
+background:black;
+}
+
+</style>
+
+<script>
+
+/* PLAY VIDEO */
+
+function playEpisode(video){
+document.getElementById("player").src = video;
+}
+
+/* SEARCH */
+
+function searchAnime(){
+
+let input = document.getElementById("search").value.toLowerCase();
+let anime = document.getElementsByClassName("anime");
+
+for(let i=0;i<anime.length;i++){
+
+let name = anime[i].innerText.toLowerCase();
+
+if(name.includes(input)){
+anime[i].style.display="block";
+}else{
+anime[i].style.display="none";
+}
+
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1>Anime Stream</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Popular</a>
+<a href="#">New</a>
+</nav>
+
+<input type="text" id="search" placeholder="Search anime..." onkeyup="searchAnime()">
+
+<h2>Popular Anime</h2>
+
+<div class="anime-grid">
+
+<div class="anime">
+
+<img src="images/demon.jpg">
+<p>Demon Slayer</p>
+
+<button onclick="playEpisode('https://drive.google.com/file/d/1te2cDqQCHl1zh1YMU1L6Ht90lWGEEgq4/preview')">Ep 1</button>
+
+<button onclick="playEpisode('https://drive.google.com/file/d/1rh4V9OXNlPz1yIzeFbrqCSokmowrJfKj/preview')">Ep 2</button>
+
+</div>
+
+<div class="anime">
+
+<img src="images/Aot.jpg">
+<p>Attack On Titan</p>
+
+<button onclick="playEpisode('https://drive.google.com/file/d/1ju52Qjy58WxzOp_CFooWGq7WvO37EiG3/preview')">Ep 1</button>
+
+<button onclick="playEpisode('https://drive.google.com/file/d/1QReHDrFCfHdrh5AwGY-kqQnTmQ6PwH1w/preview')">Ep 2</button>
+
+</div>
+
+<div class="anime">
+
+<img src="images/naruto.jpg">
+<p>Naruto</p>
+
+<button onclick="playEpisode('VIDEO_LINK')">Ep 1</button>
+
+<button onclick="playEpisode('VIDEO_LINK')">Ep 2</button>
+
+</div>
+
+<div class="anime">
+
+<img src="images/JJK.jpg">
+<p>Jujutsu Kaisen</p>
+
+<button onclick="playEpisode('VIDEO_LINK')">Ep 1</button>
+
+<button onclick="playEpisode('VIDEO_LINK')">Ep 2</button>
+
+</div>
+
+</div>
+
+<h2>Watch Episode</h2>
+
+<iframe
+id="player"
+src="https://drive.google.com/file/d/1te2cDqQCHl1zh1YMU1L6Ht90lWGEEgq4/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+<footer>
+<p>© 2026 Anime Stream</p>
+</footer>
+
+</body>
+</html>
