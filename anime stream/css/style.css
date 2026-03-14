@@ -1,46 +1,35 @@
+/* General Styles */
 body{
 background:#111;
 color:white;
-font-family:Arial;
+font-family:Arial, sans-serif;
 text-align:center;
 margin:0;
 transition:0.4s;
 }
 
+/* Header */
 h1{
 background:#e50914;
 padding:15px;
 margin:0;
 }
-@media (max-width:768px){
 
-h1{
-font-size:24px;
-text-align:center;
-}
-
-nav{
-display:flex;
-justify-content:center;
-gap:15px;
-}
-
-.anime-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
+/* Navbar */
 nav{
 background:black;
 padding:15px;
 position:sticky;
 top:0;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin:20px;
 font-size:18px;
 font-weight:bold;
 }
@@ -49,50 +38,53 @@ nav a:hover{
 color:red;
 }
 
+/* Search bar */
 #search{
 width:90%;
+max-width:500px;
 padding:10px;
 margin:15px;
 font-size:16px;
+border-radius:5px;
+border:none;
 }
 
+/* Anime Grid */
 .anime-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:20px;
 padding:20px;
 }
 
-.anime img{
-width:100%;
-border-radius:8px;
-}
-
+/* Anime Card */
 .anime{
-margin:20px;
 background:#1a1a1a;
 padding:15px;
 border-radius:10px;
-width:220px;
 transition:0.3s;
+width:100%;
 }
 
 .anime:hover{
 transform:translateY(-5px);
 }
 
+/* Anime Image */
 .anime img{
-width:200px;
-height:300px;
+width:100%;
+aspect-ratio:2/3;
 object-fit:cover;
 border-radius:10px;
 }
 
+/* Anime Title */
 .anime p{
 font-weight:bold;
 margin-top:10px;
 }
 
+/* Buttons */
 button{
 padding:8px 12px;
 margin:5px;
@@ -107,22 +99,51 @@ button:hover{
 background:#b20710;
 }
 
+/* Video Player */
 #player{
 display:block;
 margin:30px auto;
-width:60%;
-height:500px;
+width:95%;
+max-width:900px;
+height:60vh;
 border:none;
+border-radius:10px;
 }
 
+/* Section Titles */
 h2{
 border-bottom:2px solid red;
 display:inline-block;
 padding-bottom:5px;
 }
 
+/* Footer */
 footer{
 margin-top:50px;
 padding:15px;
 background:black;
+}
+
+/* Mobile Responsive */
+@media (max-width:768px){
+
+h1{
+font-size:24px;
+}
+
+nav a{
+font-size:16px;
+}
+
+.anime-grid{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+padding:10px;
+}
+
+#player{
+width:100%;
+height:40vh;
+}
+
 }
