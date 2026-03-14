@@ -12,7 +12,24 @@ background:#e50914;
 padding:15px;
 margin:0;
 }
+@media (max-width:768px){
 
+h1{
+font-size:24px;
+text-align:center;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:15px;
+}
+
+.anime-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
 nav{
 background:black;
 padding:15px;
@@ -33,18 +50,22 @@ color:red;
 }
 
 #search{
+width:90%;
 padding:10px;
-width:300px;
-margin:20px auto;
-display:block;
-border-radius:5px;
-border:none;
+margin:15px;
+font-size:16px;
 }
 
 .anime-grid{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:20px;
+padding:20px;
+}
+
+.anime img{
+width:100%;
+border-radius:8px;
 }
 
 .anime{
